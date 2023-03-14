@@ -23,3 +23,15 @@ resource "hcloud_server" "this" {
 
   # network {}
 }
+
+resource "hcloud_server_network" "this" {
+  count = var.attach_private_network ? 1 : 0
+
+  server_id = hcloud_server.this.id
+
+  network_id = var.network_id
+  subnet_id  = var.subnet_id
+
+  ip        = var.ip
+  alias_ips = var.alias_ips
+}

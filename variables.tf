@@ -98,3 +98,33 @@ variable "primary_ipv6_id" {
   description = "ID of existing or external IPv6 address."
   default     = null
 }
+
+variable "attach_private_network" {
+  type        = bool
+  description = "If true, attach server to an existing private network."
+  default     = false
+}
+
+variable "network_id" {
+  type        = number
+  description = "ID of the network which should be added to the server."
+  default     = null
+}
+
+variable "subnet_id" {
+  type        = string
+  description = "ID of the sub-network which should be added to the server."
+  default     = null
+}
+
+variable "ip" {
+  type        = string
+  description = "IP to request to be assigned to this server."
+  default     = null
+}
+
+variable "alias_ips" {
+  type        = list(string)
+  description = "Additional IPs to be assigned to this server."
+  default     = []
+}
