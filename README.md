@@ -95,7 +95,11 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_id"></a> [id](#output\_id) | Unique ID of the server |
+| <a name="output_name"></a> [name](#output\_name) | Name of the server |
+| <a name="output_public_ipv4_address"></a> [public\_ipv4\_address](#output\_public\_ipv4\_address) | The public IPv4 address |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## License
