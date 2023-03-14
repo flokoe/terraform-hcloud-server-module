@@ -18,6 +18,7 @@ variable "image" {
 variable "location" {
   type        = string
   description = "The location name to create the server in."
+  default     = null
 }
 
 variable "user_data" {
@@ -72,4 +73,58 @@ variable "rebuild_protection" {
   type        = bool
   description = "Enable or disable rebuild protection."
   default     = false
+}
+
+variable "public_ipv4_enabled" {
+  type        = bool
+  description = "Enable or disable public IPv4 address."
+  default     = true
+}
+
+variable "public_ipv6_enabled" {
+  type        = bool
+  description = "Enable or disable public IPv6 address."
+  default     = true
+}
+
+variable "primary_ipv4_id" {
+  type        = string
+  description = "ID of existing or external IPv4 address."
+  default     = null
+}
+
+variable "primary_ipv6_id" {
+  type        = string
+  description = "ID of existing or external IPv6 address."
+  default     = null
+}
+
+variable "attach_private_network" {
+  type        = bool
+  description = "If true, attach server to an existing private network."
+  default     = false
+}
+
+variable "network_id" {
+  type        = number
+  description = "ID of the network which should be added to the server."
+  default     = null
+}
+
+variable "subnet_id" {
+  type        = string
+  description = "ID of the sub-network which should be added to the server."
+  default     = null
+}
+
+variable "ip" {
+  type        = string
+  description = "IP to request to be assigned to this server."
+  default     = null
+}
+
+variable "alias_ips" {
+  type        = list(string)
+  description = "Additional IPs to be assigned to this server."
+  default     = []
 }

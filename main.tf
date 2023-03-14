@@ -13,7 +13,25 @@ resource "hcloud_server" "this" {
   delete_protection  = var.delete_protection
   rebuild_protection = var.rebuild_protection
 
-  # public_net {}
+  public_net {
+    ipv4_enabled = var.public_ipv4_enabled
+    ipv4         = var.primary_ipv4_id
+
+    ipv6_enabled = var.public_ipv6_enabled
+    ipv6         = var.primary_ipv6_id
+  }
 
   # network {}
+}
+
+resource "hcloud_server_network" "this" {
+  count = var.attach_private_network ? 1 : 0
+
+  server_id = hcloud_server.this.id
+
+  network_id = var.network_id
+  subnet_id  = var.subnet_id
+
+  ip        = var.ip
+  alias_ips = var.alias_ips
 }
