@@ -128,3 +128,9 @@ variable "alias_ips" {
   description = "Additional IPs to be assigned to this server."
   default     = []
 }
+
+variable "rdns" {
+  type        = string
+  description = "Domain for reverse DNS entry."
+  default     = null
+}

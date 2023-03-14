@@ -35,3 +35,19 @@ resource "hcloud_server_network" "this" {
   ip        = var.ip
   alias_ips = var.alias_ips
 }
+
+resource "hcloud_rdns" "ipv4" {
+  count = var.public_ipv4_enabled && var.rdns ? 1 : 0
+
+  server_id  = hcloud_server.this.id
+  ip_address = hcloud_server.this.ipv4_address
+  dns_ptr    = var.rdns
+}
+
+resource "hcloud_rdns" "ipv6" {
+  count = var.public_ipv6_enabled && var.rdns ? 1 : 0
+
+  server_id  = hcloud_server.this.id
+  ip_address = hcloud_server.this.ipv6_address
+  dns_ptr    = var.rdns
+}

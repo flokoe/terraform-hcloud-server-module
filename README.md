@@ -60,6 +60,8 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [hcloud_rdns.ipv4](https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs/resources/rdns) | resource |
+| [hcloud_rdns.ipv6](https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs/resources/rdns) | resource |
 | [hcloud_server.this](https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs/resources/server) | resource |
 | [hcloud_server_network.this](https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs/resources/server_network) | resource |
 
@@ -84,6 +86,7 @@ No modules.
 | <a name="input_primary_ipv6_id"></a> [primary\_ipv6\_id](#input\_primary\_ipv6\_id) | ID of existing or external IPv6 address. | `string` | `null` | no |
 | <a name="input_public_ipv4_enabled"></a> [public\_ipv4\_enabled](#input\_public\_ipv4\_enabled) | Enable or disable public IPv4 address. | `bool` | `true` | no |
 | <a name="input_public_ipv6_enabled"></a> [public\_ipv6\_enabled](#input\_public\_ipv6\_enabled) | Enable or disable public IPv6 address. | `bool` | `true` | no |
+| <a name="input_rdns"></a> [rdns](#input\_rdns) | Domain for reverse DNS entry. | `string` | `null` | no |
 | <a name="input_rebuild_protection"></a> [rebuild\_protection](#input\_rebuild\_protection) | Enable or disable rebuild protection. | `bool` | `false` | no |
 | <a name="input_server_type"></a> [server\_type](#input\_server\_type) | Name of the server type this server should be created with. | `string` | `"cx11"` | no |
 | <a name="input_ssh_keys"></a> [ssh\_keys](#input\_ssh\_keys) | SSH key IDs or names which should be injected into the server at creation time. | `list(string)` | `[]` | no |
