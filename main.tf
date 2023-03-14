@@ -1,3 +1,7 @@
+locals {
+  rdns = var.rdns != null
+}
+
 resource "hcloud_server" "this" {
   name               = var.name
   server_type        = var.server_type
@@ -37,7 +41,7 @@ resource "hcloud_server_network" "this" {
 }
 
 resource "hcloud_rdns" "ipv4" {
-  count = var.public_ipv4_enabled && var.rdns ? 1 : 0
+  count = var.public_ipv4_enabled && local.rdns ? 1 : 0
 
   server_id  = hcloud_server.this.id
   ip_address = hcloud_server.this.ipv4_address
@@ -45,7 +49,7 @@ resource "hcloud_rdns" "ipv4" {
 }
 
 resource "hcloud_rdns" "ipv6" {
-  count = var.public_ipv6_enabled && var.rdns ? 1 : 0
+  count = var.public_ipv6_enabled && local.rdns ? 1 : 0
 
   server_id  = hcloud_server.this.id
   ip_address = hcloud_server.this.ipv6_address
