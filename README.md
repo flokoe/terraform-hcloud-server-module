@@ -38,6 +38,9 @@ module "hcloud_server" {
 
 <!-- ## Notes -->
 
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## License
 
 MIT Licensed. See [LICENSE](https://github.com/flokoe/terraform-hcloud-server-module/blob/main/LICENSE) for full details.
