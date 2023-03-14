@@ -74,3 +74,27 @@ variable "rebuild_protection" {
   description = "Enable or disable rebuild protection."
   default     = false
 }
+
+variable "public_ipv4_enabled" {
+  type        = bool
+  description = "Enable or disable public IPv4 address."
+  default     = true
+}
+
+variable "public_ipv6_enabled" {
+  type        = bool
+  description = "Enable or disable public IPv6 address."
+  default     = true
+}
+
+variable "primary_ipv4_id" {
+  type        = string
+  description = "ID of existing or external IPv4 address."
+  default     = null
+}
+
+variable "primary_ipv6_id" {
+  type        = string
+  description = "ID of existing or external IPv6 address."
+  default     = null
+}
