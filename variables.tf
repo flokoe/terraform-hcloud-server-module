@@ -18,6 +18,7 @@ variable "image" {
 variable "location" {
   type        = string
   description = "The location name to create the server in."
+  default     = null
 }
 
 variable "user_data" {

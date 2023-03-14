@@ -72,7 +72,7 @@ No modules.
 | <a name="input_image"></a> [image](#input\_image) | Name or ID of the image the server is created from. | `string` | `"debian-11"` | no |
 | <a name="input_keep_disk"></a> [keep\_disk](#input\_keep\_disk) | If true, do not upgrade the disk. This allows downgrading the server type later. | `bool` | `false` | no |
 | <a name="input_labels"></a> [labels](#input\_labels) | User-defined labels (key-value pairs) should be created with. | `map(string)` | `{}` | no |
-| <a name="input_location"></a> [location](#input\_location) | The location name to create the server in. | `string` | n/a | yes |
+| <a name="input_location"></a> [location](#input\_location) | The location name to create the server in. | `string` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the server to create (must be unique per project and a valid hostname as per RFC 1123). | `string` | n/a | yes |
 | <a name="input_placement_group_id"></a> [placement\_group\_id](#input\_placement\_group\_id) | Placement Group ID the server added to on creation. | `string` | `null` | no |
 | <a name="input_rebuild_protection"></a> [rebuild\_protection](#input\_rebuild\_protection) | Enable or disable rebuild protection. | `bool` | `false` | no |
